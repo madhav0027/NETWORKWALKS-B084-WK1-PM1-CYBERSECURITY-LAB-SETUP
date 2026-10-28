@@ -320,10 +320,10 @@ Kolawole Asmot Omowumi
 
 Cybersecurity Intern | Networkwalks
 
-<a href="https://github.com/omolola-cyber">
+<a href="https://github.com/madhav0027">
 <img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Profile"/>
 </a>
-<a href="https://www.linkedin.com/in/kolawole-omolola-8490033a7">
+<a href="https://www.linkedin.com/in/madhav-pathak-498076384">
 <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Profile"/>
 </a>
 
