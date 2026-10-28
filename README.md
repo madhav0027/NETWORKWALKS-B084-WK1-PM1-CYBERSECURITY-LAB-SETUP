@@ -1,43 +1,69 @@
-🛡️ Cybersecurity & Pentesting Lab Setup
+<div align="center">
+
+🔐 Cybersecurity Lab Environment Setup
+
+Building a virtual lab for penetration testing and ethical hacking practice
+
+Networkwalks | Cybersecurity Internship | Project 01
+
+</div>
 
 <p align="center">
-<img src="https://img.shields.io/badge/Networkwalks-Cybersecurity-blue?style=for-the-badge" alt="Networkwalks"/>
-<img src="https://img.shields.io/badge/Project-01-purple?style=for-the-badge" alt="Project 01"/>
-<img src="https://img.shields.io/badge/VirtualBox-7.0.20-183A61?style=for-the-badge&logo=virtualbox&logoColor=white" alt="VirtualBox"/>
-<img src="https://img.shields.io/badge/Kali%20Linux-2026.2-557C94?style=for-the-badge&logo=kalilinux&logoColor=white" alt="Kali Linux"/>
+<img src="https://img.shields.io/badge/Skill-Cybersecurity-404040?style=flat-square&labelColor=C00000" alt="Cybersecurity"/>
+<img src="https://img.shields.io/badge/VirtualBox-v7.0.20-0070C0?style=flat-square&labelColor=000000&logo=virtualbox&logoColor=white" alt="VirtualBox"/>
+<img src="https://img.shields.io/badge/Kali%20Linux-v2026.2-E87500?style=flat-square&labelColor=000000&logo=kalilinux&logoColor=white" alt="Kali Linux"/>
+<img src="https://img.shields.io/badge/Host-Linux%20Mint-87CF3E?style=flat-square&labelColor=000000&logo=linuxmint&logoColor=white" alt="Linux Mint"/>
+<img src="https://img.shields.io/badge/Network-10.0.0.0%2F24-238F89?style=flat-square&labelColor=000000" alt="Network"/>
+<img src="https://img.shields.io/badge/Penetration%20Testing-C00000?style=flat-square&labelColor=000000&logo=kalilinux&logoColor=white" alt="Penetration Testing"/>
+<img src="https://img.shields.io/badge/Skill-Virtualization-404040?style=flat-square&labelColor=C00000" alt="Virtualization"/>
+<img src="https://img.shields.io/badge/Ethical%20Hacking-E87500?style=flat-square&labelColor=000000" alt="Ethical Hacking"/>
+<img src="https://img.shields.io/badge/Networkwalks-404040?style=flat-square&labelColor=C00000" alt="Networkwalks"/>
+<img src="https://img.shields.io/badge/GitHub-404040?style=flat-square&labelColor=0070C0&logo=github&logoColor=white" alt="GitHub"/>
 </p>
 
-<p align="center">
-<b>Building a Virtual Cybersecurity Lab for Ethical Hacking & Network Security</b>
-<br/>
-<i>Cybersecurity Internship | Week 01 | Networkwalks</i>
-</p>
+📌 Project Overview
 
-⚡ Project Overview
+This project focuses on setting up a virtual cybersecurity and penetration-testing laboratory using VirtualBox and Kali Linux, hosted on Linux Mint.
 
-Welcome to my first cybersecurity internship project at Networkwalks!
+The purpose of this lab is to create a controlled environment for practicing cybersecurity tools, network scanning, reconnaissance, vulnerability assessment, and other security-testing activities.
 
-This project documents the setup of a virtual penetration-testing lab using VirtualBox and Kali Linux, hosted on Linux Mint.
+The lab uses a dedicated VirtualBox NAT Network so additional virtual machines can be connected later for authorized penetration-testing exercises.
 
-The goal is to build a controlled environment where I can practice network reconnaissance, port scanning, vulnerability assessment, and other cybersecurity techniques without directly modifying my primary operating system.
+🎯 Objectives
 
-By using a dedicated virtual network, the lab can also be expanded with additional virtual machines for authorized security testing.
+The main objectives of this project are to:
 
-🎯 Project Objectives
 🖥️ Install and configure VirtualBox on Linux Mint.
-🐉 Import and configure Kali Linux.
-🌐 Create a dedicated VirtualBox NAT Network.
-📡 Configure a static IP address for Kali Linux.
-🔎 Verify connectivity, routing, DNS, and Nmap.
+🐉 Import and configure Kali Linux as a virtual machine.
+🌐 Create a private NAT Network for the cybersecurity lab.
+📡 Configure network connectivity and a static IP address.
+🔎 Verify gateway connectivity, Internet access, and DNS resolution.
+🧰 Verify that Nmap is installed and working.
 📸 Create a clean VM snapshot for recovery.
-📝 Document configuration issues and troubleshooting solutions.
+📝 Document the complete setup, problems, and solutions.
+🚀 Prepare the environment for future cybersecurity projects.
+🛡️ Purpose of the Lab
+
+This laboratory provides a virtual environment for learning and practicing authorized cybersecurity techniques.
+
+It can be used for:
+
+🔍 Network reconnaissance
+📡 Port scanning
+🛡️ Vulnerability assessment
+📊 Packet analysis
+🌐 Web application security testing
+🧪 Security-tool experimentation
+🖥️ Multi-VM penetration-testing exercises
+⚠️ Ethical use: Only test systems you own or have explicit permission to assess.
+🔒 Network isolation: A NAT Network allows connected VMs to communicate with each other and access external networks. For malware analysis or experiments requiring strict isolation, use a separate Internal Network without Internet access.
 🏗️ Lab Architecture
 
 <p align="center">
-<img src="https://img.shields.io/badge/HOST-Linux%20Mint-87CF3E?style=flat-square&logo=linuxmint&logoColor=white" alt="Linux Mint Host"/>
-<img src="https://img.shields.io/badge/HYPERVISOR-VirtualBox-183A61?style=flat-square&logo=virtualbox&logoColor=white" alt="VirtualBox"/>
-<img src="https://img.shields.io/badge/GUEST-Kali%20Linux-557C94?style=flat-square&logo=kalilinux&logoColor=white" alt="Kali Linux"/>
+<img src="1-screenshot-title-image.png" alt="Cybersecurity lab architecture" width="850"/>
 </p>
+
+The lab consists of a Linux Mint host running VirtualBox, with Kali Linux connected to the NatNetwork virtual network.
 
 text
                     ┌──────────────────────┐
@@ -46,110 +72,120 @@ text
                                │
                     ┌──────────▼───────────┐
                     │   VirtualBox NAT     │
-                    │   Outbound Access    │
+                    │  Outbound Connection │
                     └──────────┬───────────┘
                                │
               ┌────────────────────────────────┐
-              │   NatNetwork: 10.0.0.0/24      │
+              │      NatNetwork                │
+              │      10.0.0.0/24               │
               │                                │
               │   ┌────────────────────────┐   │
               │   │     Kali Linux VM      │   │
               │   │     10.0.0.2/24         │   │
-              │   │     2 CPU / 4 GB RAM   │   │
+              │   │     4 GB RAM            │   │
+              │   │     2 CPU Cores        │   │
               │   └────────────────────────┘   │
               │                                │
-              │   Future Target VMs             │
+              │       Future Target VMs        │
               └────────────────────────────────┘
 
-Network design: A NAT Network allows connected VMs to communicate with one another and access external networks through NAT. It does not guarantee complete isolation from the Internet or host environment. Use a dedicated Internal Network for experiments that require no external connectivity.
-⚙️ Lab Specifications
 
-<table>
-<tr>
-<th>Component</th>
-<th>Configuration</th>
-</tr>
-<tr><td>🖥️ Host OS</td><td>Linux Mint</td></tr>
-<tr><td>🧠 Host Memory</td><td>8 GB RAM</td></tr>
-<tr><td>⚡ Processor</td><td>Intel Core i5-7200U</td></tr>
-<tr><td>🧰 Hypervisor</td><td>VirtualBox 7.0.20</td></tr>
-<tr><td>🐉 Guest OS</td><td>Kali Linux 2026.2</td></tr>
-<tr><td>🧠 Guest Memory</td><td>4096 MB (4 GB)</td></tr>
-<tr><td>⚙️ Guest CPU</td><td>2 cores</td></tr>
-<tr><td>🌐 Network Mode</td><td>NAT Network</td></tr>
-<tr><td>📛 Network Name</td><td><code>NatNetwork</code></td></tr>
-<tr><td>📡 Subnet</td><td><code>10.0.0.0/24</code></td></tr>
-<tr><td>🐧 Kali IPv4</td><td><code>10.0.0.2/24</code></td></tr>
-<tr><td>🚪 Gateway</td><td><code>10.0.0.1</code></td></tr>
-<tr><td>🌍 DNS</td><td><code>8.8.8.8</code></td></tr>
-</table>
+Additional target machines can be added to the same virtual network in future projects.
 
-💡 Resource planning: Kali uses 4 GB of the host's 8 GB RAM. Keep sufficient memory available for Linux Mint, and avoid running multiple resource-intensive applications simultaneously.
-🪜 Installation & Configuration
-01 — 📦 Install an Archive Utility
+⚙️ Lab Configuration
+🧩 Component	⚙️ Configuration
+🖥️ Host OS	Linux Mint
+🧠 Host RAM	8 GB
+⚡ Processor	Intel Core i5-7200U
+🧰 Hypervisor	VirtualBox 7.0.20
+🐉 Security OS	Kali Linux 2026.2
+🧠 Kali RAM	4096 MB (4 GB)
+⚙️ Kali CPU	2 cores
+🌐 Virtual Network	NAT Network
+📛 Network Name	NatNetwork
+📡 Network Address	10.0.0.0/24
+🐧 Kali IP Address	10.0.0.2/24 (static)
+🚪 Default Gateway	10.0.0.1
+🌍 DNS Server	8.8.8.8
+🔮 Future VM Addresses	Subject to DHCP and IP allocation
+💡 Resource allocation: Kali Linux is allocated 4 GB of the host's 8 GB RAM. Leave sufficient memory for Linux Mint and avoid running too many resource-intensive applications simultaneously.
+🪜 Lab Setup Procedure
+Step 1. Install 7-Zip
 
-The Kali virtual-machine package was downloaded as a .7z archive and extracted using a compatible archive utility.
+A compatible archive utility was used to extract the Kali Linux virtual-machine package, which was downloaded as a .7z archive.
 
-On Linux Mint, try:
+On Linux Mint, try installing the available archive utility:
 
 bash
 sudo apt update
 sudo apt install p7zip-full
 
 
-If the package is unavailable for your Linux Mint version, use another compatible 7z extraction utility.
+If the package is unavailable in your Linux Mint version, use another compatible 7z extraction utility.
 
-02 — 🧰 Install VirtualBox
+Step 2. Install VirtualBox
 
-VirtualBox provides the virtualization environment for running Kali Linux without replacing the host operating system.
+VirtualBox was installed on the Linux Mint host to create and manage virtual machines.
 
-🔗 Download: VirtualBox Official Downloads
+Tool: VirtualBox 7.0.20
 
-After installation, open VirtualBox and prepare to import the Kali virtual-machine package.
+🔗 Official download: VirtualBox Downloads
 
-03 — 🌐 Create the NAT Network
+After installation, VirtualBox was opened to import and configure Kali Linux.
 
-Open VirtualBox's Network Manager and create a dedicated NAT Network.
+Step 3. Create the NAT Network
 
-Configuration used:
+A dedicated NAT Network was created through VirtualBox Network Manager.
 
-ini
-Network Name = NatNetwork
-IPv4 Prefix  = 10.0.0.0/24
-DHCP         = Enabled
-IPv6         = Disabled
+Network configuration:
 
-
-The network prefix was changed from VirtualBox's initial default to match the lab's addressing plan.
-
-This network allows future attacker and target VMs to share a virtual subnet while retaining outbound Internet access.
-
-04 — 🐉 Import and Configure Kali Linux
-
-Import the extracted Kali Linux VM into VirtualBox.
-
-Configure the VM with these resources:
-
-ini
-Operating System = Kali Linux
-RAM              = 4096 MB
-CPU Cores        = 2
-Network Adapter  = Adapter 1
-Attached To      = NAT Network
-Network Name     = NatNetwork
+text
+Network Name: NatNetwork
+IPv4 Prefix:  10.0.0.0/24
+DHCP:         Enabled
+IPv6:         Disabled
 
 
-Navigate to:
+<p align="center">
+<img src="2-screenshot-network-settings-1.png" alt="VirtualBox NAT Network configuration" width="850"/>
+</p>
+
+The IPv4 prefix was changed to 10.0.0.0/24 to match the planned lab addressing scheme.
+
+A NAT Network was selected because multiple VMs connected to the same virtual network can communicate with one another while retaining outbound connectivity.
+
+This setup prepares the lab for future attacker and target VMs.
+
+Step 4. Import Kali Linux
+
+Kali Linux was downloaded from the official Kali Linux website and imported into VirtualBox.
+
+🔗 Official download: Get Kali Linux
+
+The virtual machine was configured with the following resources:
+
+text
+Operating System: Kali Linux
+RAM:              4096 MB
+CPU Cores:        2
+Network Adapter:  Adapter 1
+Attached To:      NAT Network
+Network Name:     NatNetwork
+
+
+<p align="center">
+<img src="3-screenshot-kali-linux.png" alt="Kali Linux virtual machine configuration" width="850"/>
+</p>
+
+The network adapter was configured under:
 
 Settings → Network → Adapter 1
 
-Select NAT Network and choose NatNetwork.
+After starting Kali Linux, DHCP initially assigned the address 10.0.0.4, confirming that the VM could obtain an address from the virtual network.
 
-After booting Kali, verify that the network interface is connected. DHCP initially assigned 10.0.0.4, confirming that the VM could obtain an address.
+Step 5. Configure the Kali Linux Network
 
-05 — 📡 Configure a Static IP
-
-First, identify the active NetworkManager connection:
+The active NetworkManager connection was identified using:
 
 bash
 nmcli connection show
@@ -157,7 +193,7 @@ nmcli connection show
 
 The connection used in this setup was Wired connection 1, associated with eth0.
 
-Apply the static configuration:
+The static IPv4 configuration was applied using:
 
 bash
 sudo nmcli connection modify "Wired connection 1" \
@@ -166,29 +202,35 @@ sudo nmcli connection modify "Wired connection 1" \
   ipv4.gateway 10.0.0.1 \
   ipv4.dns 8.8.8.8
 
-
-Reactivate the connection:
-
-bash
 sudo nmcli connection up "Wired connection 1"
 
 
-Verify the result:
+<p align="center">
+<img src="4-screenshot-kali-network-settings.png" alt="Kali Linux network configuration" width="850"/>
+</p>
+
+Expected network settings:
+
+Setting	Value
+IP Address	10.0.0.2
+Subnet Mask	255.255.255.0
+Gateway	10.0.0.1
+DNS Server	8.8.8.8
+
+Verify the configuration:
 
 bash
 ip a show eth0
 ip route
+nmcli device show eth0
 
 
-Expected address:
+A static address makes it easier to reference the Kali machine during future lab exercises.
 
-text
-10.0.0.2/24
+⚠️ Ensure 10.0.0.2 is not already in use and does not conflict with the DHCP pool. Configure the DHCP range or reservation appropriately.
+Step 6. Create a Clean VM Snapshot
 
-⚠️ IP address safety: Ensure 10.0.0.2 is not assigned to another VM and does not conflict with the DHCP pool. Configure the DHCP range or reservation appropriately.
-06 — 📸 Create a Clean Snapshot
-
-After completing the configuration and verification, create a snapshot in VirtualBox.
+After completing the initial configuration and verification, a VirtualBox snapshot was created.
 
 Snapshot name:
 
@@ -196,55 +238,56 @@ text
 Clean Kali - Network Setup
 
 
-This snapshot acts as a recovery point before future experiments, tool installations, or configuration changes.
+The snapshot represents the clean baseline of the laboratory.
+
+If a future exercise breaks the network configuration or changes the VM unexpectedly, the snapshot provides a recovery point.
+
+📸 Best practice: Take a snapshot before installing additional tools or performing experimental security exercises.
 
 🔎 Lab Verification
 
-The following checks help confirm that the environment is configured correctly.
+The following tests help verify the network configuration and installed security tools.
 
-Test	Command	Expected result
-🌐 IP address	ip a	eth0 shows 10.0.0.2/24
-📡 Gateway	ping -c 3 10.0.0.1	Successful replies
-🌍 Internet	ping -c 3 8.8.8.8	Successful replies, if ICMP is permitted
-🔎 DNS	nslookup networkwalks.com	Domain resolves successfully
-🧰 Nmap	nmap --version	Installed version is displayed
-📸 Snapshot	VirtualBox Snapshots	Baseline snapshot is present
-🖼️ Verification Screenshots
+✅ Test	🧾 Command	🎯 Expected Result
+🌐 Check IP address	ip a	eth0 shows 10.0.0.2/24
+📡 Test gateway	ping -c 3 10.0.0.1	Successful replies
+🌍 Test Internet	ping -c 3 8.8.8.8	Successful replies, if ICMP is permitted
+🔎 Test DNS	nslookup networkwalks.com	Domain resolves successfully
+🧰 Verify Nmap	nmap --version	Installed version is displayed
+📸 Verify snapshot	VirtualBox Snapshots	Clean baseline snapshot is listed
+Example Network Results
+text
+IP Address:
+10.0.0.2/24
 
-<details>
-<summary><b>📷 Image 1 — Network Configuration</b></summary>
+Default Gateway:
+10.0.0.1
 
-Add Image1.png to your repository and embed it here:
+DNS Server:
+8.8.8.8
 
-markdown
-![Network Configuration](Image1.png)
+📷 Verification Screenshots
 
+<p align="center">
+<b>Image 1 — Network Configuration</b>
+<br/>
+<img src="Image1.png" alt="Network configuration and IP verification" width="850"/>
+</p>
 
-</details>
+<p align="center">
+<b>Image 2 — Connectivity and Tool Verification</b>
+<br/>
+<img src="Image2.png" alt="Network connectivity and Nmap verification" width="850"/>
+</p>
 
-<details>
-<summary><b>📷 Image 2 — Connectivity & Tool Verification</b></summary>
+<p align="center">
+<b>Image 3 — Troubleshooting and Configuration</b>
+<br/>
+<img src="Image3.png" alt="Network troubleshooting and configuration" width="850"/>
+</p>
 
-Add Image2.png to your repository and embed it here:
+Useful diagnostic commands:
 
-markdown
-![Connectivity and Tool Verification](Image2.png)
-
-
-</details>
-
-<details>
-<summary><b>📷 Image 3 — Troubleshooting / Configuration</b></summary>
-
-Add Image3.png to your repository and embed it here:
-
-markdown
-![Troubleshooting and Configuration](Image3.png)
-
-
-</details>
-
-Additional Diagnostic Commands
 bash
 ip route
 nmcli device status
@@ -252,22 +295,22 @@ nmcli connection show
 nmcli device show eth0
 cat /etc/resolv.conf
 
+✅ Verification note: The table describes expected results. Confirm the actual command output before reporting each test as successful.
+🐞 Problems Encountered & Solutions
 
-These commands help inspect routing, interface status, connection profiles, and DNS configuration.
+Documenting problems and their resolutions makes the lab easier to reproduce and troubleshoot.
 
-✅ Verification note: The table lists expected results. Confirm the actual outputs on your VM before reporting a test as successful.
-🐞 Troubleshooting & Solutions
-🔴 Issue 1 — Incorrect Network Prefix
+Problem 1. Incorrect Network Prefix
 
-Problem: The NAT Network was initially created with 10.0.2.0/24, which did not match the planned subnet.
+Problem: The NAT Network was initially created with VirtualBox's suggested prefix, 10.0.2.0/24, instead of the planned 10.0.0.0/24.
 
-Solution: Open the NAT Network settings, change the IPv4 prefix to 10.0.0.0/24, and apply the configuration.
+Solution: Opened the NAT Network settings, changed the IPv4 prefix to 10.0.0.0/24, and applied the configuration.
 
-🟠 Issue 2 — Static IP Did Not Apply
+Problem 2. Static IP Did Not Take Effect
 
-Problem: The interface continued showing the previous DHCP address, 10.0.0.4.
+Problem: After modifying the NetworkManager connection, ip a continued showing the previous DHCP address, 10.0.0.4.
 
-Cause: The saved NetworkManager connection had not been reapplied.
+Cause: The connection profile had been modified, but the active connection had not been reapplied.
 
 Solution:
 
@@ -276,9 +319,9 @@ sudo nmcli connection up "Wired connection 1"
 ip a show eth0
 
 
-Confirm that the interface now displays 10.0.0.2/24.
+The interface should show 10.0.0.2/24 after the static configuration is successfully applied.
 
-🟡 Issue 3 — Incorrect Connection Name
+Problem 3. Incorrect Connection Name
 
 Problem: Using "wired connection 1" returned a connection-profile error.
 
@@ -290,16 +333,19 @@ bash
 nmcli connection show
 
 
-Use the exact connection name shown in the output:
+Use the exact connection name displayed by NetworkManager:
 
 text
 Wired connection 1
 
-🔵 Issue 4 — Possible IP Address Conflict
 
-Problem: A static address can conflict with the DHCP pool or another VM.
+Connection names can differ between installations, so always check the active profiles before modifying them.
 
-Solution: Check the network configuration, DHCP range, and addresses used by other machines.
+Problem 4. Potential IP Address Conflict
+
+Problem: A static IP address may conflict with another VM or the DHCP address pool.
+
+Solution: Check the network's DHCP configuration and verify the address allocation.
 
 bash
 ip a
@@ -307,68 +353,67 @@ ip route
 nmcli device show eth0
 
 
-Reserve or exclude the static address from the DHCP pool where appropriate.
+Ensure 10.0.0.2 is unique and configure the DHCP range or reservation appropriately.
 
-💡 Key Learnings
+💡 What I Learned
+1. NAT vs. NAT Network
 
-<table>
-<tr>
-<td>🌐</td>
-<td><b>NAT vs. NAT Network</b><br/>Learned how NAT Network supports communication between connected VMs while providing outbound connectivity.</td>
-</tr>
-<tr>
-<td>🖥️</td>
-<td><b>Virtualization</b><br/>Learned how virtual network adapters connect guest operating systems to different network environments.</td>
-</tr>
-<tr>
-<td>📡</td>
-<td><b>Static IP Configuration</b><br/>Practiced configuring IPv4, gateway, and DNS using NetworkManager.</td>
-</tr>
-<tr>
-<td>📸</td>
-<td><b>Snapshots & Recovery</b><br/>Learned the importance of maintaining a clean baseline before experimental work.</td>
-</tr>
-<tr>
-<td>⚙️</td>
-<td><b>Resource Management</b><br/>Configured Kali with 4 GB RAM and two CPU cores on an 8 GB Linux Mint host.</td>
-</tr>
-<tr>
-<td>📝</td>
-<td><b>Technical Documentation</b><br/>Practiced documenting setup steps, expected results, configuration problems, and fixes.</td>
-</tr>
-</table>
+A standard NAT configuration provides outbound connectivity to a VM. A NAT Network additionally allows connected VMs to communicate over their shared virtual network.
+
+This makes NAT Networks useful for multi-machine cybersecurity laboratories.
+
+2. Virtual Machine Networking
+
+I learned how VirtualBox network adapters connect virtual machines to different network environments and how networking modes affect communication between systems.
+
+3. Static IP Configuration
+
+I learned how to configure IPv4 addresses, subnet masks, gateways, and DNS servers using NetworkManager in Kali Linux.
+
+4. VM Snapshots
+
+I learned that a clean snapshot should be created before potentially disruptive or experimental activities to preserve a known-good recovery point.
+
+5. Resource Allocation
+
+I configured Kali Linux with 4 GB RAM and two CPU cores on a Linux Mint host with 8 GB RAM, balancing guest performance with host resource availability.
+
+6. Documentation and Troubleshooting
+
+I learned the importance of recording commands, configuration settings, screenshots, problems, and solutions as part of a professional cybersecurity workflow.
 
 🔐 Security & Ethical Use
 
-This laboratory is designed for educational purposes and authorized security testing.
+This laboratory is intended for educational purposes and authorized security testing only.
 
 ✅ Test only systems you own or have explicit permission to assess.
 🔒 Verify network isolation before conducting sensitive experiments.
-🧪 Use a separate Internal Network for exercises requiring no Internet access.
+🧪 Use an Internal Network for exercises that must not have Internet access.
 📸 Create snapshots before making potentially disruptive changes.
-⚠️ Remember that NAT alone does not guarantee complete isolation.
+⚠️ Never assume NAT alone guarantees complete isolation.
 🔗 Tools & Resources
-Tool	Purpose	Official resource
-📦 7-Zip	Archive extraction	Download
-🧰 VirtualBox	Virtualization	Download
-🐉 Kali Linux	Security testing OS	Get Kali
-🖥️ Linux Mint	Host operating system	Official website
-🔎 Nmap	Network discovery and scanning	Official website
-👨‍💻 Author
+Tool	Purpose	Official Resource
+📦 7-Zip	Archive extraction	7-Zip Downloads
+🧰 VirtualBox	Virtualization	VirtualBox Downloads
+🐉 Kali Linux	Security testing operating system	Get Kali
+🖥️ Linux Mint	Host operating system	Linux Mint
+🔎 Nmap	Network discovery and scanning	Nmap
+👤 Author
+
+<div align="center">
 
 Kolawole Asmot Omowumi
 
-🎓 Cybersecurity Intern
-🏢 Networkwalks
+Cybersecurity Intern | Networkwalks
 
-<p>
 <a href="https://github.com/omolola-cyber">
 <img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Profile"/>
 </a>
 <a href="https://www.linkedin.com/in/kolawole-omolola-8490033a7">
 <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Profile"/>
 </a>
-</p>
+
+</div>
 
 📌 Project Information
 Field	Details
@@ -381,8 +426,12 @@ Hypervisor	VirtualBox 7.0.20
 Guest OS	Kali Linux 2026.2
 Repository	GitHub
 
-<p align="center">
-<b>🚀 Learning by Building. Securing by Testing. Growing Through Practice.</b>
-<br/><br/>
-⭐ <i>This project marks the beginning of my hands-on cybersecurity journey at Networkwalks.</i>
-</p>
+<div align="center">
+
+🚀 Learn by Building. Secure by Testing. Grow Through Practice.
+
+Project 01 — Cybersecurity Internship at Networkwalks
+
+⭐ This project marks the beginning of my hands-on cybersecurity journey, developing practical skills in virtualization, networking, troubleshooting, and ethical penetration testing.
+
+</div>
